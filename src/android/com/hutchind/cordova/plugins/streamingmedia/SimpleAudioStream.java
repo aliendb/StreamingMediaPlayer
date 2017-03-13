@@ -40,7 +40,7 @@ public class SimpleAudioStream extends Activity implements
 		String backgroundImagePath = b.getString("bgImage");
 		String backgroundImageScale = b.getString("bgImageScale");
 		mShouldAutoClose = b.getBoolean("shouldAutoClose");
-		mShouldAutoClose = mShouldAutoClose == null ? true : mShouldAutoClose;
+		mShouldAutoClose = mShouldAutoClose == null ? false : mShouldAutoClose;
 		backgroundImageScale = backgroundImageScale == null ? "center" : backgroundImageScale.toLowerCase();
 		ImageView.ScaleType bgImageScaleType;
 		// Default background to black
@@ -120,7 +120,13 @@ public class SimpleAudioStream extends Activity implements
 	@Override
 	public void start() {
 		if (mMediaPlayer!=null) {
-			mMediaPlayer.start();
+			try { 
+				mMediaPlayer.start();
+			} catch (Exception e) {  //db edit
+				Log.d(TAG, e.toString()); 
+				onDestroy(); //try distroy db edit
+				play();  //try replay db edit
+			}
 		}
 	}
 
@@ -145,12 +151,14 @@ public class SimpleAudioStream extends Activity implements
 		}
 	}
 
-	public int getDuration() {
-		return (mMediaPlayer!=null) ? mMediaPlayer.getDuration() : 0;
+	public int getDuration() { //db edit
+		return 0;
+		//return (mMediaPlayer!=null) ? mMediaPlayer.getDuration() : 0;
 	}
 
-	public int getCurrentPosition() {
-		return (mMediaPlayer!=null) ? mMediaPlayer.getCurrentPosition() : 0;
+	public int getCurrentPosition() { //db edit
+		return 0;
+		//return (mMediaPlayer!=null) ? mMediaPlayer.getCurrentPosition() : 0;
 	}
 
 	public void seekTo(int i) {
@@ -179,11 +187,11 @@ public class SimpleAudioStream extends Activity implements
 	}
 
 	public boolean canSeekBackward() {
-		return true;
+		return false; //db edit
 	}
 
 	public boolean canSeekForward() {
-		return true;
+		return false; //db edit
 	}
 
 	@Override
