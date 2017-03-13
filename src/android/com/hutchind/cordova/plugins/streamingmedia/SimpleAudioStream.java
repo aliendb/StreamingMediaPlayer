@@ -151,14 +151,14 @@ public class SimpleAudioStream extends Activity implements
 		}
 	}
 
-	public int getDuration() { //db edit
-		return 0;
-		//return (mMediaPlayer!=null) ? mMediaPlayer.getDuration() : 0;
+	public int getDuration() { 
+		return 0; //db edit
+		//return (mMediaPlayer!=null) ? mMediaPlayer.getDuration() : 0; //db edit
 	}
 
-	public int getCurrentPosition() { //db edit
-		return 0;
-		//return (mMediaPlayer!=null) ? mMediaPlayer.getCurrentPosition() : 0;
+	public int getCurrentPosition() { 
+		return 0; //db edit
+		//return (mMediaPlayer!=null) ? mMediaPlayer.getCurrentPosition() : 0; //db edit
 	}
 
 	public void seekTo(int i) {
