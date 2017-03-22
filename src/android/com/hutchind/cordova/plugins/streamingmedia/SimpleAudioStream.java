@@ -124,8 +124,8 @@ public class SimpleAudioStream extends Activity implements
 				mMediaPlayer.start();
 			} catch (Exception e) {  //db edit
 				Log.d(TAG, e.toString()); 
-				onDestroy(); //try distroy db edit
-				play();  //try replay db edit
+				onDestroy(); //try onDestroy db edit
+				play();  //try re-play db edit
 			}
 		}
 	}
