@@ -1,5 +1,5 @@
 {
-  "name": "AlienDB-StreamingMediaPlayer",
+  "name": "aliendb.AlienDB-StreamingMediaPlayer",
   "version": "1.0.2",
   "description": "This plugin allows you to stream audio and video in a fullscreen, native player on iOS and Android.",
   "main": "index.js",
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/aliendb/StreamingMediaPlayer.git"
   },
   "cordova": {
-    "id": "AlienDB-StreamingMediaPlayer",
+    "id": "aliendb.AlienDB-StreamingMediaPlayer",
     "platforms": [
       "android",
       "amazon-fireos",
